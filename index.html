@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TopZak</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         1. HEADER + HERO
+    ====================================================== -->
+
+    <div class="wrapper" id="home">
+
+        <header class="container">
+
+            <a href="#home" class="logo" aria-label="TopZak">
+
+                <span class="logo-icon" aria-hidden="true">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+
+                <span class="logo-text">
+                    TopZak
+                </span>
+
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav class="desktop-nav">
+
+                <ul>
+
+                    <li>
+                        <a href="#services" data-i18n="nav.services">
+                            Услуги
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#portfolio" data-i18n="nav.portfolio">
+                            Портфолио
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about" data-i18n="nav.about">
+                            О нас
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contacts" data-i18n="nav.contacts">
+                            Контакты
+                        </a>
+                    </li>
+
+
+                    <!-- LANGUAGE -->
+
+                    <li class="language-switcher">
+
+                        <button
+                            type="button"
+                            class="language-current"
+                            id="languageToggle"
+                            aria-label="Сменить язык"
+                            aria-expanded="false"
+                        >
+
+                            <img
+                                id="currentLanguageFlag"
+                                src="./img/nav-ico/russian-flag.png"
+                                alt="Русский язык"
+                            >
+
+                            <span class="language-chevron"></span>
+
+                        </button>
+
+
+                        <div
+                            class="language-dropdown"
+                            id="languageDropdown"
+                            aria-hidden="true"
+                        >
+
+                            <button
+                                type="button"
+                                class="language-option is-active"
+                                data-lang="ru"
+                            >
+
+                                <img
+                                    src="./img/nav-ico/russian-flag.png"
+                                    alt=""
+                                >
+
+                                <span>
+                                    Русский
+                                </span>
+
+                                <i>✓</i>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="language-option"
+                                data-lang="am"
+                            >
+
+                                <img
+                                    src="./img/nav-ico/armenia-national-flag-in-original-ratio-transparent-free-png.png"
+                                    alt=""
+                                >
+
+                                <span>
+                                    Հայերեն
+                                </span>
+
+                                <i>✓</i>
+
+                            </button>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- MOBILE BURGER -->
+
+            <button
+                type="button"
+                class="mobile-menu-toggle"
+                id="mobileMenuToggle"
+                aria-label="Открыть меню"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </header>
+
+
+        <!-- =================================================
+             MOBILE MENU
+        ================================================== -->
+
+        <div
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-hidden="true"
+        >
+
+            <div class="mobile-menu-inner">
+
+                <div
+                    class="mobile-menu-label"
+                    data-i18n="mobile.navigation"
+                >
+                    НАВИГАЦИЯ
+                </div>
+
+
+                <nav class="mobile-menu-nav">
+
+                    <a href="#home" class="mobile-nav-link">
+
+                        <span class="mobile-nav-number">
+                            01
+                        </span>
+
+                        <span
+                            class="mobile-nav-text"
+                            data-i18n="nav.home"
+                        >
+                            Главная
+                        </span>
+
+                    </a>
+
+
+                    <a href="#services" class="mobile-nav-link">
+
+                        <span class="mobile-nav-number">
+                            02
+                        </span>
+
+                        <span
+                            class="mobile-nav-text"
+                            data-i18n="nav.services"
+                        >
+                            Услуги
+                        </span>
+
+                    </a>
+
+
+                    <a href="#portfolio" class="mobile-nav-link">
+
+                        <span class="mobile-nav-number">
+                            03
+                        </span>
+
+                        <span
+                            class="mobile-nav-text"
+                            data-i18n="nav.portfolio"
+                        >
+                            Портфолио
+                        </span>
+
+                    </a>
+
+
+                    <a href="#about" class="mobile-nav-link">
+
+                        <span class="mobile-nav-number">
+                            04
+                        </span>
+
+                        <span
+                            class="mobile-nav-text"
+                            data-i18n="nav.about"
+                        >
+                            О нас
+                        </span>
+
+                    </a>
+
+
+                    <a href="#contacts" class="mobile-nav-link">
+
+                        <span class="mobile-nav-number">
+                            05
+                        </span>
+
+                        <span
+                            class="mobile-nav-text"
+                            data-i18n="nav.contacts"
+                        >
+                            Контакты
+                        </span>
+
+                    </a>
+
+                </nav>
+
+
+                <!-- MOBILE LANGUAGE -->
+
+                <div class="mobile-languages">
+
+                    <div
+                        class="mobile-languages-title"
+                        data-i18n="mobile.language"
+                    >
+                        ЯЗЫК САЙТА
+                    </div>
+
+
+                    <div class="mobile-language-list">
+
+                        <button
+                            type="button"
+                            class="mobile-language-button is-active"
+                            data-lang="ru"
+                        >
+
+                            <img
+                                src="./img/nav-ico/russian-flag.png"
+                                alt="RU"
+                            >
+
+                            <span>
+                                RU
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="mobile-language-button"
+                            data-lang="am"
+                        >
+
+                            <img
+                                src="./img/nav-ico/armenia-national-flag-in-original-ratio-transparent-free-png.png"
+                                alt="AM"
+                            >
+
+                            <span>
+                                AM
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mobile-menu-bottom">
+                    TOPZAK © 2026
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero container">
+
+            <div class="hero--info">
+
+                <h1 data-i18n-html="hero.title">
+                    РАЗРАБОТКА САЙТОВ<br>
+                    И SEO ПРОДВИЖЕНИЕ
+                </h1>
+
+
+                <p data-i18n-html="hero.text">
+                    Мы создаем эффективные сайты, которые
+                    расширят бизнес и увеличат продажи в Армении.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#contacts"
+                        class="btn1"
+                        data-i18n="hero.order"
+                    >
+                        ЗАКАЗАТЬ
+                    </a>
+
+                    <a
+                        href="#services"
+                        class="btn2"
+                        data-i18n="hero.offers"
+                    >
+                        ПРЕДЛОЖЕНИЯ
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <img
+                src="./img/bgrobot.svg"
+                alt=""
+                class="hero-robot"
+            >
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         2. ФАКТЫ
+    ====================================================== -->
+
+    <section class="facts container">
+
+        <div class="facts-text">
+
+            <div
+                class="facts-small-title"
+                data-i18n="facts.kicker"
+            >
+                Немного фактов
+            </div>
+
+
+            <h2 data-i18n="facts.title">
+                Наши
+            </h2>
+
+
+            <h3 data-i18n="facts.subtitle">
+                компетенции
+            </h3>
+
+
+            <p data-i18n="facts.text">
+                Мы занимаемся разработкой сайтов уже более 10 лет.
+                За нашими плечами знания IT и продвижения,
+                маркетинга, брендинга, дизайна и организации
+                рекламных кампаний.
+            </p>
+
+        </div>
+
+
+        <div class="facts-stats">
+
+            <div class="fact-item">
+
+                <img
+                    src="./img/eye.svg"
+                    alt=""
+                >
+
+                <div
+                    class="fact-number"
+                    data-i18n-html="facts.expNumber"
+                >
+                    12+ <span>лет</span>
+                </div>
+
+                <div
+                    class="fact-description"
+                    data-i18n-html="facts.expDesc"
+                >
+                    Опыт работы с 2008<br>
+                    года
+                </div>
+
+            </div>
+
+
+            <div class="fact-item">
+
+                <img
+                    src="./img/folder.svg"
+                    alt=""
+                >
+
+                <div class="fact-number">
+                    100+
+                </div>
+
+                <div
+                    class="fact-description"
+                    data-i18n-html="facts.projectsDesc"
+                >
+                    Реализованных<br>
+                    проектов
+                </div>
+
+            </div>
+
+
+            <div class="fact-item">
+
+                <img
+                    src="./img/house.svg"
+                    alt=""
+                >
+
+                <div class="fact-number">
+                    9+
+                </div>
+
+                <div
+                    class="fact-description"
+                    data-i18n-html="facts.devDesc"
+                >
+                    Лет в сфере<br>
+                    программирования
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         3. НАШИ ПРЕИМУЩЕСТВА
+    ====================================================== -->
+
+    <section class="advantages container">
+
+        <h2
+            class="advantages-title"
+            data-i18n="advantages.title"
+        >
+            Наши преимущества
+        </h2>
+
+
+        <div class="advantages-grid">
+
+            <article class="advantage-item">
+
+                <div class="advantage-icon">
+
+                    <img
+                        src="./img/watch.svg"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="advantage-content">
+
+                    <h3 data-i18n="advantages.deadlineTitle">
+                        СРОКИ
+                    </h3>
+
+                    <p data-i18n="advantages.deadlineText">
+                        Мы всегда предоставляем клиенту
+                        реальную оценку сроков.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="advantage-item">
+
+                <div class="advantage-icon">
+
+                    <img
+                        src="./img/telephone.svg"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="advantage-content">
+
+                    <h3 data-i18n="advantages.adaptiveTitle">
+                        АДАПТИВНЫЙ ДИЗАЙН
+                    </h3>
+
+                    <p data-i18n="advantages.adaptiveText">
+                        Создаем сайты для всех типов устройств.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="advantage-item">
+
+                <div class="advantage-icon">
+
+                    <img
+                        src="./img/rocket.svg"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="advantage-content">
+
+                    <h3 data-i18n="advantages.seoTitle">
+                        БАЗОВОЕ SEO
+                    </h3>
+
+                    <p data-i18n="advantages.seoText">
+                        Оптимизируем сайты и готовим их
+                        к продвижению.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="advantage-item">
+
+                <div class="advantage-icon">
+
+                    <img
+                        src="./img/pause.svg"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="advantage-content">
+
+                    <h3 data-i18n-html="advantages.cmsTitle">
+                        СИСТЕМА УПРАВЛЕНИЯ<br>
+                        КОНТЕНТОМ
+                    </h3>
+
+                    <p data-i18n="advantages.cmsText">
+                        WordPress или Битрикс.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="advantage-item">
+
+                <div class="advantage-icon">
+
+                    <img
+                        src="./img/headset.svg"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="advantage-content">
+
+                    <h3 data-i18n="advantages.supportTitle">
+                        ПОДДЕРЖКА
+                    </h3>
+
+                    <p data-i18n="advantages.supportText">
+                        Поддерживаем проекты наших клиентов.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="advantage-item">
+
+                <div class="advantage-icon">
+
+                    <img
+                        src="./img/brushes.svg"
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="advantage-content">
+
+                    <h3 data-i18n="advantages.designTitle">
+                        ДИЗАЙН
+                    </h3>
+
+                    <p data-i18n="advantages.designText">
+                        Создаем современные визуальные решения.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         4. КАЛЬКУЛЯТОР
+    ====================================================== -->
+
+    <section
+        class="service-calculator"
+        id="services"
+    >
+
+        <div class="service-calculator-inner container">
+
+            <div class="calculator-heading">
+
+                <div
+                    class="calculator-kicker"
+                    data-i18n="calc.kicker"
+                >
+                    Стоимость проекта
+                </div>
+
+
+                <h2 data-i18n-html="calc.title">
+                    Соберите
+                    <span>свой сайт</span>
+                </h2>
+
+
+                <p data-i18n="calc.text">
+                    Выберите необходимые услуги —
+                    стоимость проекта рассчитается автоматически.
+                </p>
+
+            </div>
+
+
+            <div class="calculator-layout">
+
+                <div class="calculator-services">
+
+                    <!-- DESIGN -->
+
+                    <button
+                        type="button"
+                        class="calculator-service is-selected"
+                        data-service
+                        data-price="160000"
+                    >
+
+                        <span class="calculator-check">
+                            ✓
+                        </span>
+
+                        <span class="calculator-service-number">
+                            01
+                        </span>
+
+
+                        <span class="calculator-service-body">
+
+                            <span
+                                class="calculator-service-title"
+                                data-i18n="calc.designTitle"
+                            >
+                                Дизайн сайта
+                            </span>
+
+                            <span
+                                class="calculator-service-description"
+                                data-i18n="calc.designText"
+                            >
+                                UI/UX, прототип,
+                                визуальная концепция
+                                и адаптивные экраны.
+                            </span>
+
+                        </span>
+
+
+                        <span class="calculator-service-price">
+                            160 000 ֏
+                        </span>
+
+                    </button>
+
+
+                    <!-- DEVELOPMENT -->
+
+                    <button
+                        type="button"
+                        class="calculator-service is-selected"
+                        data-service
+                        data-price="180000"
+                    >
+
+                        <span class="calculator-check">
+                            ✓
+                        </span>
+
+                        <span class="calculator-service-number">
+                            02
+                        </span>
+
+
+                        <span class="calculator-service-body">
+
+                            <span
+                                class="calculator-service-title"
+                                data-i18n="calc.devTitle"
+                            >
+                                Верстка сайта
+                            </span>
+
+                            <span
+                                class="calculator-service-description"
+                                data-i18n="calc.devText"
+                            >
+                                Адаптивная разработка,
+                                анимации и подготовка к запуску.
+                            </span>
+
+                        </span>
+
+
+                        <span class="calculator-service-price">
+                            180 000 ֏
+                        </span>
+
+                    </button>
+
+
+                    <!-- SEO -->
+
+                    <button
+                        type="button"
+                        class="calculator-service"
+                        data-service
+                        data-price="120000"
+                    >
+
+                        <span class="calculator-check">
+                            ✓
+                        </span>
+
+                        <span class="calculator-service-number">
+                            03
+                        </span>
+
+
+                        <span class="calculator-service-body">
+
+                            <span
+                                class="calculator-service-title"
+                                data-i18n="calc.seoTitle"
+                            >
+                                SEO-продвижение
+                            </span>
+
+                            <span
+                                class="calculator-service-description"
+                                data-i18n="calc.seoText"
+                            >
+                                Базовая оптимизация,
+                                структура и подготовка
+                                к продвижению.
+                            </span>
+
+                        </span>
+
+
+                        <span class="calculator-service-price">
+                            120 000 ֏
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- RESULT -->
+
+                <aside class="calculator-result">
+
+                    <div
+                        class="calculator-result-label"
+                        data-i18n="calc.project"
+                    >
+                        Ваш проект
+                    </div>
+
+
+                    <div class="calculator-result-count">
+
+                        <span data-i18n="calc.selected">
+                            Выбрано услуг:
+                        </span>
+
+                        <strong id="selectedCount">
+                            2
+                        </strong>
+
+                    </div>
+
+
+                    <div class="calculator-result-line"></div>
+
+
+                    <div
+                        class="calculator-result-caption"
+                        data-i18n="calc.estimate"
+                    >
+                        Предварительная стоимость
+                    </div>
+
+
+                    <div
+                        class="calculator-total"
+                        id="calculatorTotal"
+                    >
+                        340 000 ֏
+                    </div>
+
+
+                    <p
+                        class="calculator-note"
+                        data-i18n="calc.note"
+                    >
+                        Итоговая цена зависит от объёма,
+                        количества страниц и сложности проекта.
+                    </p>
+
+
+                    <a
+                        href="#contacts"
+                        class="calculator-button"
+                    >
+
+                        <span data-i18n="calc.discuss">
+                            ОБСУДИТЬ ПРОЕКТ
+                        </span>
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <div
+                        class="calculator-mini"
+                        data-i18n="calc.free"
+                    >
+                        Бесплатная консультация
+                        перед стартом проекта
+                    </div>
+
+                </aside>
+
+            </div>
+
+
+            <!-- =================================================
+                 ОТДЕЛЬНЫЕ УСЛУГИ
+            ================================================== -->
+
+            <div class="standalone-services">
+
+                <div class="standalone-heading">
+
+                    <span data-i18n="stand.kicker">
+                        Не нужен полный пакет?
+                    </span>
+
+
+                    <h3 data-i18n-html="stand.title">
+                        Услуги можно заказать
+                        <strong>отдельно</strong>
+                    </h3>
+
+                </div>
+
+
+                <div class="standalone-grid">
+
+                    <article class="standalone-card">
+
+                        <div class="standalone-number">
+                            01
+                        </div>
+
+
+                        <h4 data-i18n="stand.seoTitle">
+                            SEO
+                        </h4>
+
+
+                        <p data-i18n="stand.seoText">
+                            Оптимизация сайта,
+                            технический аудит,
+                            структура и продвижение.
+                        </p>
+
+
+                        <div class="standalone-bottom">
+
+                            <span>
+                                от 120 000 ֏
+                            </span>
+
+                            <a href="#contacts">
+                                →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="standalone-card">
+
+                        <div class="standalone-number">
+                            02
+                        </div>
+
+
+                        <h4 data-i18n="stand.devTitle">
+                            Верстка сайта
+                        </h4>
+
+
+                        <p data-i18n="stand.devText">
+                            Адаптивная frontend-разработка
+                            по вашему готовому дизайну.
+                        </p>
+
+
+                        <div class="standalone-bottom">
+
+                            <span>
+                                от 180 000 ֏
+                            </span>
+
+                            <a href="#contacts">
+                                →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="standalone-card">
+
+                        <div class="standalone-number">
+                            03
+                        </div>
+
+
+                        <h4 data-i18n="stand.designTitle">
+                            Дизайн сайта
+                        </h4>
+
+
+                        <p data-i18n="stand.designText">
+                            Современный UI/UX,
+                            прототипирование
+                            и дизайн адаптивов.
+                        </p>
+
+
+                        <div class="standalone-bottom">
+
+                            <span>
+                                от 160 000 ֏
+                            </span>
+
+                            <a href="#contacts">
+                                →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         5. О НАС
+    ====================================================== -->
+
+    <section
+        class="container us"
+        id="about"
+    >
+
+        <div class="us-image">
+
+            <img
+                src="./img/circle.svg"
+                alt=""
+            >
+
+        </div>
+
+
+        <div class="us-info">
+
+            <h2 data-i18n-html="about.title">
+
+                Креативная<br>
+
+                <span>
+                    веб-студия
+                </span>
+
+                и<br>
+
+                интернет-агентство<br>
+
+                полного цикла
+
+            </h2>
+
+
+            <p data-i18n="about.text">
+                TopZak — это опытная команда профессионалов,
+                которая любит интернет и знает,
+                как заставить его работать на ваш бизнес.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         6. НАША КОМАНДА
+    ====================================================== -->
+
+    <section
+        class="team container"
+        id="portfolio"
+    >
+
+        <h2
+            class="team-title"
+            data-i18n="team.title"
+        >
+            НАША КОМАНДА
+        </h2>
+
+
+        <div class="team-cards">
+
+            <!-- NAREK -->
+
+            <article class="team-card">
+
+                <div class="avatar">
+                    NA
+                </div>
+
+
+                <div
+                    class="card-name"
+                    data-i18n="team.narek"
+                >
+                    Нарек
+                </div>
+
+
+                <div class="card-position">
+                    CEO, PROJECT MANAGER
+                </div>
+
+
+                <div
+                    class="card-description"
+                    data-i18n-html="team.narekDesc"
+                >
+                    Стратегия, Управление<br>
+                    Ритм Клиента
+                </div>
+
+
+                <a
+                    href="#"
+                    class="portfolio"
+                >
+
+                    <span data-i18n="team.portfolio">
+                        ПОРТФОЛИО
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </article>
+
+
+            <!-- SVETLANA -->
+
+            <article class="team-card team-card-blue">
+
+                <div class="avatar">
+                    SV
+                </div>
+
+
+                <div
+                    class="card-name"
+                    data-i18n="team.sveta"
+                >
+                    Светлана
+                </div>
+
+
+                <div class="card-position">
+                    WEB DESIGNER,<br>
+                    GRAPHIC DESIGNER
+                </div>
+
+
+                <div
+                    class="card-description"
+                    data-i18n-html="team.svetaDesc"
+                >
+                    Интерфейсы, Айдентика,<br>
+                    Визуальные Системы
+                </div>
+
+
+                <a
+                    href="#"
+                    class="portfolio"
+                >
+
+                    <span data-i18n="team.portfolio">
+                        ПОРТФОЛИО
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </article>
+
+
+            <!-- ARMAN -->
+
+            <article class="team-card team-card-purple">
+
+                <div class="avatar">
+                    AR
+                </div>
+
+
+                <div
+                    class="card-name"
+                    data-i18n="team.arman"
+                >
+                    Арман
+                </div>
+
+
+                <div class="card-position">
+                    CTO, FULL-STACK<br>
+                    DEVELOPER
+                </div>
+
+
+                <div
+                    class="card-description"
+                    data-i18n-html="team.armanDesc"
+                >
+                    Архитектура, Frontend,<br>
+                    Интеграции
+                </div>
+
+
+                <a
+                    href="#"
+                    class="portfolio"
+                >
+
+                    <span data-i18n="team.portfolio">
+                        ПОРТФОЛИО
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </article>
+
+        </div>
+
+
+        <img
+            src="./img/team-ball.png"
+            alt=""
+            class="team-ball"
+        >
+
+    </section>
+
+
+    <!-- =====================================================
+         7. КОНТАКТЫ
+    ====================================================== -->
+
+    <section
+        class="contacts container"
+        id="contacts"
+    >
+
+        <div class="contacts-bg"></div>
+
+
+        <div class="contacts-inner">
+
+            <!-- LEFT -->
+
+            <div class="contacts-info">
+
+                <div
+                    class="contacts-kicker"
+                    data-i18n="contact.kicker"
+                >
+                    ПЕРЕЙТИ В КОНТАКТЫ
+                </div>
+
+
+                <h2 data-i18n-html="contact.title">
+                    СВЯЖИТЕСЬ С<br>
+                    НАМИ
+                </h2>
+
+
+                <h3 data-i18n-html="contact.subtitle">
+                    И НАША КОМАНДА<br>
+                    ПОМОЖЕТ РЕАЛИЗОВАТЬ<br>
+                    ЛЮБОЙ ПРОЕКТ
+                </h3>
+
+
+                <div class="contacts-line"></div>
+
+
+                <p data-i18n-html="contact.text">
+                    TopZak — ваш партнер в мире<br>
+                    веб-разработки и SEO
+                </p>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form
+                class="contact-form"
+                id="contactForm"
+            >
+
+                <label>
+
+                    <span data-i18n="contact.name">
+                        ИМЯ
+                    </span>
+
+                    <input
+                        type="text"
+                        name="name"
+                        required
+                        data-i18n-placeholder="contact.namePh"
+                        placeholder="Введите ваше имя"
+                    >
+
+                </label>
+
+
+                <label>
+
+                    <span data-i18n="contact.email">
+                        EMAIL
+                    </span>
+
+                    <input
+                        type="email"
+                        name="email"
+                        required
+                        data-i18n-placeholder="contact.emailPh"
+                        placeholder="Введите ваше email"
+                    >
+
+                </label>
+
+
+                <label>
+
+                    <span data-i18n="contact.service">
+                        УСЛУГА
+                    </span>
+
+
+                    <select
+                        name="service"
+                        required
+                    >
+
+                        <option
+                            value=""
+                            selected
+                            disabled
+                            data-i18n="contact.choose"
+                        >
+                            Выберите категорию услуги
+                        </option>
+
+                        <option
+                            value="fullsite"
+                            data-i18n="contact.fullsite"
+                        >
+                            Создание сайта под ключ
+                        </option>
+
+                        <option
+                            value="design"
+                            data-i18n="contact.webdesign"
+                        >
+                            Дизайн сайта
+                        </option>
+
+                        <option
+                            value="frontend"
+                            data-i18n="contact.frontend"
+                        >
+                            Верстка сайта
+                        </option>
+
+                        <option
+                            value="seo"
+                            data-i18n="contact.seo"
+                        >
+                            SEO-продвижение
+                        </option>
+
+                        <option
+                            value="other"
+                            data-i18n="contact.other"
+                        >
+                            Другая услуга
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+
+                    <span data-i18n="contact.comment">
+                        КОММЕНТАРИЙ
+                    </span>
+
+
+                    <textarea
+                        name="comment"
+                        data-i18n-placeholder="contact.commentPh"
+                        placeholder="Добавьте комментарий"
+                    ></textarea>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="contact-submit"
+                >
+
+                    <span data-i18n="contact.submit">
+                        СВЯЗАТЬСЯ
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+                <div
+                    class="contact-form-status"
+                    id="contactFormStatus"
+                ></div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+<!-- =====================================================
+     8. FOOTER
+====================================================== -->
+
+<footer class="footer">
+
+    <!-- РАЗМЫТЫЕ ДЕКОРАТИВНЫЕ ФИГУРЫ -->
+
+    <img
+        src="./img/footer/bg/circle1.svg"
+        alt=""
+        class="footer-blur footer-blur-left"
+    >
+
+    <img
+        src="./img/footer/bg/circle2.svg"
+        alt=""
+        class="footer-blur footer-blur-right"
+    >
+
+
+    <div class="footer-container container">
+
+        <!-- =================================================
+             ЛЕВАЯ ЧАСТЬ
+        ================================================== -->
+
+        <div class="footer-main">
+
+            <a href="#home" class="footer-logo">
+
+                <span class="footer-logo-icon">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+
+                <span class="footer-logo-text">
+                    TopZak
+                </span>
+
+            </a>
+
+
+            <p
+                class="footer-description"
+                data-footer-ru="Креативное интернет-агентство полного цикла. Разработка и создание сайтов, комплексное продвижение и поддержка сайтов по всей России и Армении."
+                data-footer-am="Կրեատիվ ամբողջական ցիկլի ինտերնետ-գործակալություն։ Կայքերի մշակում և ստեղծում, համալիր առաջխաղացում և աջակցություն Հայաստանում և Ռուսաստանում։"
+            >
+                Креативное интернет-агентство полного цикла.
+                Разработка и создание сайтов, комплексное продвижение
+                и поддержка сайтов по всей России и Армении.
+            </p>
+
+
+            <!-- СОЦИАЛЬНЫЕ СЕТИ -->
+
+            <div class="footer-socials">
+
+                <a
+                    href="#"
+                    class="footer-social"
+                    aria-label="Instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        src="./img/footer/social/instagram.svg"
+                        alt="Instagram"
+                    >
+
+                </a>
+
+
+                <a
+                    href="mailto:narekzakaryan100@gmail.com"
+                    class="footer-social"
+                    aria-label="Gmail"
+                >
+
+                    <img
+                        src="./img/footer/social/Gmail.svg"
+                        alt="Gmail"
+                    >
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="footer-social"
+                    aria-label="TikTok"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        src="./img/footer/social/TikTok.svg"
+                        alt="TikTok"
+                    >
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="footer-social"
+                    aria-label="Telegram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        src="./img/footer/social/Telegram.svg"
+                        alt="Telegram"
+                    >
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             МЕНЮ
+        ================================================== -->
+
+        <div class="footer-column">
+
+            <h3
+                data-footer-ru="Меню"
+                data-footer-am="Մենյու"
+            >
+                Меню
+            </h3>
+
+
+            <nav class="footer-links">
+
+                <a
+                    href="#services"
+                    data-footer-ru="Разработка сайтов"
+                    data-footer-am="Կայքերի մշակում"
+                >
+                    Разработка сайтов
+                </a>
+
+
+                <a
+                    href="#services"
+                    data-footer-ru="Продвижение сайтов"
+                    data-footer-am="Կայքերի առաջխաղացում"
+                >
+                    Продвижение сайтов
+                </a>
+
+
+                <a
+                    href="#services"
+                    data-footer-ru="Дизайн"
+                    data-footer-am="Դիզայն"
+                >
+                    Дизайн
+                </a>
+
+
+                <a
+                    href="#portfolio"
+                    data-footer-ru="Портфолио"
+                    data-footer-am="Պորտֆոլիո"
+                >
+                    Портфолио
+                </a>
+
+
+                <a
+                    href="#services"
+                    data-footer-ru="Цены"
+                    data-footer-am="Գներ"
+                >
+                    Цены
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <!-- =================================================
+             МЫ ДЕЛАЕМ
+        ================================================== -->
+
+        <div class="footer-column footer-services-column">
+
+            <h3
+                data-footer-ru="Мы делаем"
+                data-footer-am="Մենք ստեղծում ենք"
+            >
+                Мы делаем
+            </h3>
+
+
+            <nav class="footer-links">
+
+                <a href="#services"
+                   data-footer-ru="Сайты на Figma"
+                   data-footer-am="Կայքեր Figma-ում">
+                    Сайты на Figma
+                </a>
+
+
+                <a href="#services"
+                   data-footer-ru="Премиум сайты"
+                   data-footer-am="Պրեմիում կայքեր">
+                    Премиум сайты
+                </a>
+
+
+                <a href="#services"
+                   data-footer-ru="Лендинги"
+                   data-footer-am="Լենդինգներ">
+                    Лендинги
+                </a>
+
+
+                <a href="#services"
+                   data-footer-ru="Корпоративные сайты"
+                   data-footer-am="Կորպորատիվ կայքեր">
+                    Корпоративные сайты
+                </a>
+
+
+                <a href="#services"
+                   data-footer-ru="Сайты с каталогом"
+                   data-footer-am="Կատալոգով կայքեր">
+                    Сайты с каталогом
+                </a>
+
+
+                <a href="#services"
+                   data-footer-ru="Веб-порталы"
+                   data-footer-am="Վեբ պորտալներ">
+                    Веб-порталы
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <!-- =================================================
+             КОНТАКТЫ
+        ================================================== -->
+
+        <div class="footer-column footer-contact-column">
+
+            <h3
+                data-footer-ru="Свяжитесь с нами"
+                data-footer-am="Կապվեք մեզ հետ"
+            >
+                Свяжитесь с нами
+            </h3>
+
+
+            <nav class="footer-links">
+
+                <a
+                    href="#contacts"
+                    data-footer-ru="Контакты"
+                    data-footer-am="Կոնտակտներ"
+                >
+                    Контакты
+                </a>
+
+
+                <a
+                    href="#contacts"
+                    data-footer-ru="Оставить заявку"
+                    data-footer-am="Թողնել հայտ"
+                >
+                    Оставить заявку
+                </a>
+
+
+                <a
+                    href="mailto:narekzakaryan100@gmail.com"
+                    class="footer-email"
+                >
+                    narekzakaryan100@gmail.com
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         НИЖНЯЯ ЧАСТЬ
+    ================================================== -->
+
+    <div class="footer-bottom container">
+
+        <span>
+            © 2026 TopZak
+        </span>
+
+
+        <a
+            href="#home"
+            class="footer-up"
+            aria-label="Наверх"
+        >
+            ↑
+        </a>
+
+    </div>
+
+</footer>
+
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
