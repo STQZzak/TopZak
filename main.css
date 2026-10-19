@@ -3987,3 +3987,376 @@ header.container {
     }
 
 }
+/* =========================================================
+   TOPZAK: FLUID LAYOUT, PORTFOLIO AND CONTENT SAFETY
+   Edit wording freely. These are consolidated overrides for
+   the original theme and replace the previous patchwork.
+========================================================= */
+:root { --tz-accent:#ff29d0; --tz-violet:#9650ff; }
+.container { width:min(1400px,calc(100% - 48px)); max-width:none; margin-inline:auto; }
+.hero { height:auto; min-height:clamp(580px,53vw,730px); display:flex; align-items:center; padding-block:clamp(65px,7vw,110px); }
+.hero--info { width:min(760px,58%); max-width:100%; min-width:0; padding-top:0; }
+.hero--info h1 { width:auto; max-width:100%; font-size:clamp(2rem,3.9vw,3.625rem); line-height:1.13; overflow-wrap:break-word; }
+.hero--info p { width:auto; max-width:600px; }
+.hero-buttons { flex-wrap:wrap; gap:clamp(12px,2.5vw,35px); }
+.hero-robot { width:min(53vw,750px); height:auto; max-width:none; top:50%; right:-4%; transform:translateY(-50%); }
+.facts { min-height:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); align-items:center; gap:clamp(32px,5vw,80px); }
+.facts-text { width:auto; min-width:0; }
+.facts-stats { position:static; justify-content:space-between; gap:clamp(12px,3vw,60px); }
+.fact-item { width:auto; min-width:0; }
+.advantages { min-height:0; padding-block:clamp(70px,8vw,110px); }
+.calculator-heading,.calculator-heading h2,.standalone-heading h3 { max-width:100%; }
+.calculator-service { height:auto; }
+.calculator-total { font-size:clamp(1.4rem,2.2vw,2.3rem); line-height:1.25; overflow-wrap:anywhere; }
+.calculator-service-price { display:none!important; }
+.standalone-bottom span { font-size:clamp(.8rem,1.1vw,1rem); }
+/* Responsive staff cards, including at tablet widths and with longer role titles. */
+.team-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(16px,2.5vw,45px); }
+.team-card { width:100%; min-width:0; height:auto; min-height:425px; padding-bottom:76px; }
+.card-name,.card-position,.card-description { overflow-wrap:break-word; }
+@media (max-width:1100px) {
+  .facts { grid-template-columns:1fr; }
+  .facts-stats { justify-content:flex-start; flex-wrap:wrap; }
+  .team-cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .team-card:last-child { grid-column:1/-1; width:min(100%,420px); justify-self:center; }
+}
+@media (min-width:768px) and (max-width:1199px) {
+  .hero--info h1 { font-size:clamp(29px,3.6vw,45px); }
+  .hero--info p { max-width:min(100%,500px); }
+}
+@media (max-width:767px) {
+  .container { width:calc(100% - 36px); margin-inline:auto; }
+  .wrapper { width:100%; overflow:hidden; }
+  .hero.container { position:relative; width:100%; max-width:100%; min-height:clamp(610px,92vw,700px); height:auto; display:flex; align-items:flex-start; justify-content:center; padding:0 18px 90px; margin:0; overflow:hidden; isolation:isolate; }
+  .hero--info { position:relative; z-index:5; width:min(100%,450px); max-width:100%; margin:0 auto; padding:clamp(95px,16vw,140px) 0 clamp(125px,23vw,170px); text-align:center; }
+  .hero--info h1 { width:100%; max-width:100%; font-size:clamp(22px,5.9vw,31px); line-height:1.22; overflow-wrap:break-word; }
+  .hero--info p { display:block; width:100%; max-width:370px; margin:15px auto 20px; font-size:clamp(12px,3.2vw,15px); line-height:1.5; }
+  .hero-buttons { width:100%; flex-direction:column; align-items:center; flex-wrap:nowrap; gap:12px; margin-top:14px; }
+  .hero-robot { position:absolute; z-index:2; width:clamp(280px,86vw,470px); height:auto; max-width:none; top:clamp(190px,24vw,215px); right:clamp(-95px,-18vw,-55px); left:auto; transform:none; margin:0; pointer-events:none; }
+  .facts-stats { gap:24px; }
+  .fact-item { flex:1 1 110px; }
+  .advantages { padding-inline:0; }
+  .team-cards { width:100%; max-width:360px; grid-template-columns:1fr; justify-items:stretch; gap:24px; }
+  .team-card,.team-card:last-child { grid-column:auto; width:100%; min-height:345px; height:auto; justify-self:stretch; padding-bottom:65px; }
+  .team-ball { pointer-events:none; }
+}
+@media (max-width:390px) {
+  .container { width:calc(100% - 28px); }
+  .hero.container { min-height:610px; }
+  .hero--info { padding-top:108px; }
+  .hero--info h1 { font-size:clamp(21px,6.2vw,25px); }
+}
+/* Avoid clipping a long Armenian service heading on the narrowest phones. */
+@media (max-width:374px) {
+  .standalone-heading h3 { font-size:clamp(20px,6.25vw,23px); }
+  .standalone-heading h3 strong { overflow-wrap:anywhere; }
+}
+/* Keep long translated words, especially Armenian service titles, in their cards. */
+.calculator-heading h2,
+.calculator-heading h2 span { overflow-wrap:anywhere; }
+
+
+/* ===================================================================
+   Figma-inspired MOBILE FIRST SCREEN + ALWAYS-VISIBLE LANGUAGE CHOICES
+   This section intentionally overrides the legacy breakpoint-specific
+   hero positions. Adjust variables here rather than editing old rules.
+   The hero retains its natural height for text changes.
+=================================================================== */
+.header-languages,
+.mobile-header-languages { display:flex; align-items:center; gap:5px; }
+.header-languages-button,
+.mobile-header-languages-button {
+  min-width:49px; height:38px; padding:0 7px; display:inline-flex;
+  align-items:center; justify-content:center; gap:5px;
+  border:1px solid rgba(195,133,243,.3); border-radius:10px;
+  background:rgba(17,9,28,.68); color:rgba(255,255,255,.77);
+  font:700 11px/1 Roboto,sans-serif; cursor:pointer;
+  transition:border-color .2s,background .2s,color .2s;
+}
+.header-languages-button img,
+.mobile-header-languages-button img {
+  display:block; width:16px; height:16px; border-radius:50%; object-fit:cover;
+}
+.header-languages-button:hover,
+.mobile-header-languages-button:hover,
+.header-languages-button.is-active,
+.mobile-header-languages-button.is-active {
+  color:#fff; border-color:#ef38d4;
+  background:linear-gradient(120deg,rgba(255,41,208,.18),rgba(133,77,255,.22));
+}
+.header-languages-button:focus-visible,
+.mobile-header-languages-button:focus-visible,
+.mobile-contact-link:focus-visible { outline:2px solid #fff; outline-offset:3px; }
+.mobile-header-actions { display:none; }
+@media (min-width:768px) {
+  .desktop-nav ul { gap:clamp(16px,2.4vw,45px); }
+  .desktop-nav a { font-size:clamp(13px,1.25vw,18px); }
+  .logo { flex-shrink:0; }
+  .logo-text { font-size:clamp(22px,2vw,28px); }
+  .hero--info h1 { text-transform:uppercase; }
+}
+@media (min-width:768px) and (max-width:850px) {
+  .header-languages-button { min-width:39px; padding:0 4px; gap:3px; }
+  .header-languages-button img { width:14px; height:14px; }
+  .desktop-nav ul { gap:14px; }
+}
+@media (max-width:767px) {
+  header.container,body.menu-open header.container {
+    height:82px; padding-inline:clamp(16px,5vw,32px);
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .mobile-menu-toggle {
+    flex:0 0 45px; width:45px; height:45px; background:none; border:0;
+    border-radius:8px; box-shadow:none; gap:5px; margin:0;
+  }
+  .mobile-menu-toggle span { width:29px; height:3px; background:#fa22d2; }
+  .mobile-header-actions { display:flex; align-items:center; gap:clamp(7px,2.2vw,13px); margin-left:auto; }
+  .mobile-header-languages-button { min-width:clamp(39px,11.5vw,48px); height:35px; padding:0 4px; gap:3px; font-size:10px; border-radius:8px; }
+  .mobile-header-languages-button img { width:14px; height:14px; }
+  .mobile-contact-link { flex:none; display:grid; place-items:center; width:33px; height:36px; color:#fff; border-radius:8px; }
+  body.menu-open .mobile-header-actions { opacity:0; visibility:hidden; pointer-events:none; }
+  .logo { top:clamp(150px,43vw,183px); left:50%; transform:translateX(-50%); }
+  .logo-text { font-size:clamp(21px,5.7vw,24px); }
+  .wrapper {
+    min-height:0; overflow:hidden;
+    background-position:center top; background-size:auto max(560px,100%);
+  }
+  .hero.container {
+    --hero-top:clamp(130px,35vw,146px);
+    --hero-bottom:clamp(80px,18vw,105px);
+    position:relative; isolation:isolate; display:flex; align-items:flex-start;
+    justify-content:center; height:auto; min-height:clamp(455px,112vw,505px);
+    width:100%; max-width:100%; padding:0 16px; margin:0; overflow:hidden;
+  }
+  .hero--info {
+    position:relative; z-index:5; width:min(100%,284px); max-width:100%;
+    margin:0 auto; padding:var(--hero-top) 0 var(--hero-bottom); text-align:center;
+  }
+  .hero--info h1 {
+    width:100%; max-width:245px; margin-inline:auto;
+    font-size:clamp(24px,7vw,28px); font-weight:400;
+    line-height:1.18; text-wrap:balance;
+    text-transform:none; overflow-wrap:normal;
+  }
+  .hero--info p { display:none; }
+  .hero-buttons { position:relative; z-index:6; display:flex; width:100%;
+    align-items:center; justify-content:center; flex-direction:column;
+    gap:12px; margin-top:clamp(25px,6vw,32px); flex-wrap:nowrap; }
+  .btn1,.btn2 { flex:none; width:clamp(153px,40vw,175px); height:45px;
+    font-size:12px; border-radius:8px; }
+  .hero-robot {
+    position:absolute; z-index:2; width:clamp(395px,108vw,530px); height:auto;
+    max-width:none; top:clamp(78px,20vw,105px);
+    right:clamp(-310px,-65vw,-240px); left:auto; transform:none;
+    margin:0; opacity:1; pointer-events:none;
+  }
+}
+@media (max-width:350px) {
+  .hero.container { --hero-top:136px; --hero-bottom:80px; min-height:465px; }
+  .hero--info { width:min(100%,248px); }
+  .hero--info h1 { max-width:232px; font-size:23px; }
+  .hero-robot { width:395px; right:-240px; top:82px; }
+  .mobile-header-actions { gap:4px; }
+  .mobile-header-languages { gap:3px; }
+  .mobile-contact-link { width:28px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .header-languages-button,.mobile-header-languages-button { transition:none; }
+}
+
+/* =============================================================
+   TOPZAK SERVICES: SIX CLEAR DIRECTIONS (no mock portfolios)
+   Edit card titles/descriptions in index.html + js/main.js.
+============================================================= */
+.standalone-services { margin-top:clamp(72px,9vw,112px); }
+.standalone-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.standalone-card { min-width:0; min-height:220px; padding:24px; border-radius:12px; display:flex; flex-direction:column; transition:border-color .2s,transform .2s,background .2s; }
+.standalone-card:hover { border-color:rgba(255,47,201,.7); background:#18121d; transform:translateY(-3px); }
+.standalone-number { margin-bottom:19px; }
+.standalone-card h4 { margin-bottom:11px; font-size:clamp(17px,1.45vw,21px); line-height:1.35; overflow-wrap:break-word; }
+.standalone-card p { padding:0 0 18px; margin:0; font-size:clamp(12px,1vw,14px); line-height:1.55; overflow-wrap:break-word; }
+.standalone-bottom { position:static; margin-top:auto; padding-top:8px; }
+.standalone-link { color:#fff; font:700 12px/1.4 Roboto,sans-serif; letter-spacing:.03em; text-decoration:none; transition:color .2s; }
+.standalone-link:hover, .standalone-link:focus-visible { color:#f74ccc; }
+.standalone-link:focus-visible { outline:2px solid #f74ccc; outline-offset:5px; }
+@media (min-width:641px) and (max-width:1024px) { .standalone-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:640px) { .standalone-grid { grid-template-columns:1fr; gap:12px; } .standalone-card { min-height:185px; padding:20px; } .standalone-number { margin-bottom:13px; } .standalone-card h4 { font-size:19px; } .standalone-card p { font-size:13px; padding-bottom:15px; } .standalone-bottom { padding-top:6px; } }
+@media (prefers-reduced-motion:reduce) { .standalone-card { transition:none; } }
+
+/* Explicitly override the old large arrow-only link rules. */
+.standalone-bottom .standalone-link {
+  display: inline-flex;
+  align-items: center;
+  color: #f4e9f9;
+  font-family: Roboto, sans-serif;
+  font-size: clamp(11px, 1vw, 13px);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .015em;
+  overflow-wrap: anywhere;
+}
+.standalone-bottom .standalone-link:hover,
+.standalone-bottom .standalone-link:focus-visible { color: #fc4bd5; }
+
+
+/* =============================================================
+   MOBILE HEADER LANGUAGE DROPDOWN
+   Only changes the language picker in the mobile header.
+   The desktop switcher and mobile navigation remain unchanged.
+============================================================= */
+@media (max-width: 767px) {
+  .mobile-header-languages {
+    position: relative;
+    flex: none;
+  }
+
+  .mobile-language-picker-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 75px;
+    height: 36px;
+    padding: 0 9px;
+    border: 1px solid rgba(195, 133, 243, .38);
+    border-radius: 9px;
+    background: rgba(17, 9, 28, .84);
+    color: #fff;
+    font: 700 11px/1 "Roboto", sans-serif;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-language-picker-toggle img,
+  .mobile-language-picker-options img {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .mobile-language-picker-toggle[aria-expanded="true"] {
+    border-color: #f429d4;
+    background: linear-gradient(120deg, rgba(255,41,208,.16), rgba(133,77,255,.24));
+  }
+
+  .mobile-language-picker-chevron {
+    flex: none;
+    transition: transform .2s ease;
+  }
+  .mobile-language-picker-toggle[aria-expanded="true"] .mobile-language-picker-chevron {
+    transform: rotate(180deg);
+  }
+
+  .mobile-language-picker-options {
+    position: absolute;
+    top: calc(100% + 7px);
+    right: 0;
+    z-index: 120;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 88px;
+    padding: 6px;
+    border: 1px solid rgba(195, 133, 243, .4);
+    border-radius: 11px;
+    background: #130e20;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .5);
+  }
+
+  .mobile-language-picker-options[hidden] {
+    display: none !important;
+  }
+
+  .mobile-language-picker-options .mobile-header-languages-button {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    min-height: 38px;
+    height: 38px;
+    padding: 0 8px;
+    gap: 8px;
+    justify-content: flex-start;
+    border-radius: 7px;
+    border-color: transparent;
+    background: transparent;
+    font-size: 11px;
+  }
+
+  /* Current selection stays in the main toggle; show the other languages below. */
+  .mobile-language-picker-options .mobile-header-languages-button.is-active {
+    display: none;
+  }
+
+  .mobile-language-picker-options .mobile-header-languages-button:hover,
+  .mobile-language-picker-options .mobile-header-languages-button:focus-visible {
+    border-color: #f429d4;
+    background: rgba(255, 41, 208, .15);
+  }
+
+  .mobile-language-picker-toggle:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-language-picker-chevron { transition: none; }
+}
+
+
+/* =============================================================
+   TOPZAK CONTACT LINKS – Edit numbers and URLs in index.html.
+   Existing layout, hero, language selector and services unchanged.
+============================================================= */
+@media (max-width: 1199px) {
+  .desktop-phone-nav { display:none; }
+}
+@media (min-width:1200px) {
+  .desktop-phone-nav { display:list-item; }
+}
+.desktop-phone-link {
+  white-space:nowrap;
+  color:#e8c8ff !important;
+  font:600 14px/1.4 Roboto,sans-serif !important;
+  text-decoration:none;
+}
+.desktop-phone-link:hover { color:#ff37d5 !important; }
+.contact-direct { margin-top:clamp(24px,3.5vw,42px); min-width:0; max-width:480px; }
+.contact-direct-title {
+  color:#bd8bfa; font:700 clamp(11px,1vw,13px)/1.5 Roboto,sans-serif;
+  letter-spacing:.07em; margin-bottom:14px;
+}
+.contact-direct-buttons { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; }
+.contact-direct-button {
+  flex:1 1 130px; display:flex; justify-content:space-between; align-items:center;
+  min-height:45px; gap:12px; padding:11px 15px; border:1px solid rgba(183,107,251,.5);
+  border-radius:10px; background:rgba(31,17,42,.75); color:#fff;
+  text-decoration:none; font:700 14px/1.3 Roboto,sans-serif;
+  transition:border-color .2s,background .2s,transform .2s;
+}
+.contact-direct-whatsapp { background:linear-gradient(115deg,rgba(220,35,181,.22),rgba(97,66,193,.23)); }
+.contact-direct-button:hover { border-color:#ed36da; background:rgba(106,52,141,.25); transform:translateY(-2px); }
+.contact-direct-detail {
+  display:flex; align-items:baseline; justify-content:space-between; gap:10px;
+  padding:11px 2px; border-bottom:1px solid rgba(184,123,240,.23);
+  text-decoration:none; color:rgba(255,255,255,.79);
+  font:400 clamp(12px,1vw,14px)/1.35 Roboto,sans-serif; min-width:0;
+}
+.contact-direct-detail strong { color:#fff; font-weight:600; overflow-wrap:anywhere; text-align:right; }
+.contact-direct-detail:hover strong { color:#ff54dc; }
+.contact-direct a:focus-visible, .calculator-phone:focus-visible,
+.footer-phone:focus-visible, .footer-social:focus-visible, .desktop-phone-link:focus-visible {
+  outline:2px solid #f72fdb; outline-offset:3px;
+}
+.calculator-phone { display:block; width:fit-content; max-width:100%; margin:12px auto 0;
+  font:600 13px/1.4 Roboto,sans-serif; color:#e0b6ff; text-decoration:none; }
+.calculator-phone:hover, .footer-phone:hover { color:#fc41db; }
+.footer-phone { color:#dcc0ff; text-decoration:none; font-weight:700; }
+@media (max-width:767px) {
+  .contact-direct { margin-top:26px; }
+  .contact-direct-buttons { gap:9px; }
+  .contact-direct-button { font-size:13px; padding:10px 12px; }
+  .contact-direct-detail { flex-wrap:wrap; }
+}
